@@ -1,0 +1,15 @@
+<div class="movie-container">
+    <div *ngFor="let item of movieList; let i = index" class="movie">
+        
+        <img [src]="getPosterUrl(item)" alt="movie poster"/>
+        <div class="movie-info">
+            <h3>{{item?.title}}</h3>
+            <span>{{item?.vote_average}}</span>
+        </div>
+    </div>
+</div>
+<!-- <span>index:{{i+1}},</span>
+       
+        <span>id:{{item.poster_path}},</span>
+        <span>title:{{item?.overview}}</span>
+        <span>status:{{item?.vote_average}}</span> -->
