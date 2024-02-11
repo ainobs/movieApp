@@ -1,15 +1,24 @@
-<div class="movie-container">
-    <div *ngFor="let item of movieList; let i = index" class="movie">
+<div class="container">
+   
+    <header>
+        <form (submit)="onSubmit(searchTerm.value); false">
+            <input type="text" #searchTerm placeholder="search..." class="search">
+        </form>
+    </header>
+    
+    <div class="movie-container">
+        <div *ngFor="let item of movieList; let i = index" class="movie">
         
-        <img [src]="getPosterUrl(item)" alt="movie poster"/>
-        <div class="movie-info">
-            <h3>{{item?.title}}</h3>
-            <span>{{item?.vote_average}}</span>
+            <img [src]="getPosterUrl(item)" alt="movie poster"/>
+            <div class="movie-info">
+                <h3>{{item?.title}}</h3>
+                <span [ngClass]="vote(item.vote_average)" class="tag">{{item?.vote_average}}</span>
+            </div>
+            <div class="movie-over">
+                <h2>overview</h2>
+                <span>{{item?.overview}}</span>
+            </div>
         </div>
     </div>
+   
 </div>
-<!-- <span>index:{{i+1}},</span>
-       
-        <span>id:{{item.poster_path}},</span>
-        <span>title:{{item?.overview}}</span>
-        <span>status:{{item?.vote_average}}</span> -->
