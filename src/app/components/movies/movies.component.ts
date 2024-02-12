@@ -36,22 +36,25 @@ export class MoviesComponent implements OnInit {
     this.fecthMovies();
   }
 
+  //Add to watch list method
   addToWatchlist(movie: any): void {
     this.watchlistService.addToWatchlist(movie);
     console.log(movie);
   }
 
+  //get movie image method
   getPosterUrl(movie: Movie): string {
     return this.path + movie.poster_path;
   }
   
-
+//Get movie ID method
   getMovieById() {
     this._activatedRoute.params.subscribe((params) => {
       console.log(params['id']);
       })
   }
 
+  //fetch movie data from API
   async fecthMovies() {
     try {
       const result = await lastValueFrom(this._clientService.getMovies());
@@ -62,6 +65,7 @@ export class MoviesComponent implements OnInit {
     }
   }
 
+  //API call for search method
   async onSubmit(searchTerm: string) {
 
     console.log('Search term:', searchTerm);
@@ -77,6 +81,7 @@ export class MoviesComponent implements OnInit {
     }
   }
 
+  //method to set colour of movie ratings
   vote(num: number): string {
 
     if (num >= 7) {

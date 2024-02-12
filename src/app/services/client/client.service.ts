@@ -15,9 +15,12 @@ export class ClientService {
     this.BASE_URL = 'https://movieappservice.onrender.com/movies';
   }
 
+  //API Call to retrieve movie list
   getMovies(): Observable<Movie[]>{
     return this._httpClient.get<Movie[]>(`${this.BASE_URL}`);
   }
+
+  //search API call to online movie database
   getSearch(link:string): Observable<Movie[]> {
     const apiKey = '4315e085f00f2ebab094e953e7de1c27';
     return this._httpClient.get<any>(`${this.SEARCH_URL}?api_key=${apiKey}&query=${link}`);
