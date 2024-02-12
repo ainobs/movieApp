@@ -4,9 +4,10 @@
 }
 header {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     padding: 1rem;
     background-color: #373b69;
+    align-items: center;
 }
 .search {
     font-family: inherit;
@@ -28,6 +29,7 @@ header {
     box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
     overflow: hidden;
     position: relative;
+    padding: 5px;
 }
 
 .movie img {
@@ -50,17 +52,17 @@ header {
 .movie-over {
     background-color: #fff;
     position:absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     right: 0;
     box-shadow: 0px -3px 5px rgba(0,0,0,0.1);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
-    max-height: 100%;
+    max-height: 70%;
     overflow: auto;
     color: #373b69;
     padding: 1rem;
-    transform: translateY(102%);
+    transform: translateY(-100%);
     transition: 0.3s ease-in-out;
 }
 .movie:hover .movie-over {
@@ -82,4 +84,39 @@ header {
 
 .red {
     color: red !important;
+}
+.intro {
+    color: #fff;
+    font-size: 2rem;
+}
+
+.btn{
+  background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+  border-radius: 8px;
+  border-style: none;
+  color: #FFFFFF;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 16px;
+  font-weight: 500;
+  height: 2.5rem;
+  text-align: center;
+  text-shadow: rgba(0, 0, 0, 0.25) 0 3px 8px;
+  transition: all .5s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-bottom: 10px;
+  margin-left: 15px;
+}
+
+.btn:hover {
+  box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+  transition-duration: .1s;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 0 2.6rem;
+  }
 }

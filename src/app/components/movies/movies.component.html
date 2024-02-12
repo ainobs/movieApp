@@ -1,6 +1,6 @@
 <div class="container">
-   
     <header>
+        <h2 class="intro">Top 20 Movie's Trend List</h2>
         <form (submit)="onSubmit(searchTerm.value); false">
             <input type="text" #searchTerm placeholder="search..." class="search">
         </form>
@@ -8,7 +8,6 @@
     
     <div class="movie-container">
         <div *ngFor="let item of movieList; let i = index" class="movie">
-        
             <img [src]="getPosterUrl(item)" alt="movie poster"/>
             <div class="movie-info">
                 <h3>{{item?.title}}</h3>
@@ -18,6 +17,7 @@
                 <h2>overview</h2>
                 <span>{{item?.overview}}</span>
             </div>
+            <button (click)="addToWatchlist(item)" class="btn">Add to Watchlist</button>
         </div>
     </div>
    
